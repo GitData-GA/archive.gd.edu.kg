@@ -1,0 +1,41 @@
+{
+  "20250211162159/v1": {
+    "title": "California 2022 Proposition 30 Feasibility Report and Recommendations",
+    "subject": "Data Science (Applications)",
+    "license": "CC BY-NC-SA",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2025/02/11",
+    "keywords": [
+      "politics",
+      "public policy",
+      "wildfire",
+      "electric car",
+      "R"
+    ],
+    "author": [
+      {
+        "firstName": "Weilin",
+        "lastName": "Cheng"
+      },
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Kathy",
+        "lastName": "Mo",
+        "orcid": "0009-0007-8456-5656"
+      },
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      }
+    ],
+    "abstract": "Proposition 30 is a plan in California to increase taxes on high-income earners in order to fund programs that promote the use of zero-emission vehicles and prevent wildfires. The tax is expected to start in 2023 and end by 2043, or earlier if the state is able to maintain its greenhouse gas emissions at expected levels for three consecutive years. Proposition 30 plans to use 80% of the tax revenue to fund the Zero Emission Vehicle program, with 45% dedicated to helping people buy electric vehicles and 35% to installing charging stations. The remaining 20% will be used for Wildfire Response and Prevention Programs. The goal is to help California reduce its greenhouse gas emissions and meet its target of reducing emissions to 80% below 1990 levels by 2050. The authors conducted a study that evaluates whether the proposition can help California achieve its goal.",
+    "relatedLink": "https://caelection2022.gd.edu.kg/",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  }
+}
