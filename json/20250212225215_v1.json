@@ -1,0 +1,34 @@
+{
+  "20250212225215/v1": {
+    "title": "Time Series of Analysis Annual Temperature Anomalies (1850–2021) for the Northern Hemisphere",
+    "subject": "Data Science (Applications)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2025/02/12",
+    "keywords": [
+      "climate change",
+      "time series",
+      "anomaly"
+    ],
+    "author": [
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Kathy",
+        "lastName": "Mo",
+        "orcid": "0009-0007-8456-5656"
+      },
+      {
+        "firstName": "Weilin",
+        "lastName": "Cheng",
+        "orcid": "0009-0008-1204-4234"
+      }
+    ],
+    "abstract": "Today, climate change is one of the most substantial issues in the world. Therefore, annual temperature anomalies are the problem we are concerned about, since anomalies are how we see how the climate changes. Our data set is about the annual temperature anomalies (1850–2021) for the northern hemisphere. A temperature anomaly means a deviation from a reference value or long-term average. The data set contains two columns which are Year and Temperature Anomalies. Based on our knowledge of time series, we want to predict the trend of Temperature Anomalies in the future. As we know, a sequence captured at successive, equally spaced points in time is referred to as a time series. Since Temperature Anomalies are taken over time, which is Years, it is a time series. Because of prior climatic history and its effects on humans, we believe that it is vital to analyze and forecast future anomalies. To better prepare and safeguard the environment, it is crucial to anticipate what these potential future anomalies might be. People can then prepare to mitigate it based on how severe it is.",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  }
+}
