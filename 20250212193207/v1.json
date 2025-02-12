@@ -1,0 +1,52 @@
+{
+  "20250212193207/v1": {
+    "title": "Unveiling Color Dynamics and Value of Andy Warhol's \"Shot Marilyns\": A Study on Visual Variations and Perception",
+    "subject": "Data Science (Applications)",
+    "license": "CC BY-SA",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2025/02/12",
+    "keywords": [
+      "shot marilyns",
+      "pop art",
+      "andy warhol",
+      "region of interest"
+    ],
+    "author": [
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      },
+      {
+        "firstName": "Kathy",
+        "lastName": "Mo",
+        "orcid": "0009-0007-8456-5656"
+      },
+      {
+        "firstName": "Xinhui",
+        "lastName": "Luo",
+        "orcid": "0009-0005-9143-9012"
+      },
+      {
+        "firstName": "Weilin",
+        "lastName": "Cheng",
+        "orcid": "0009-0008-1204-4234"
+      },
+      {
+        "firstName": "Erick S.",
+        "lastName": "Arenas V.",
+        "orcid": "0009-0007-3655-8312"
+      }
+    ],
+    "abstract": "This study investigates the visual dynamics and value of Andy Warhol’s &quot;Shot Marilyns&quot; series through the innovative application of statistical techniques, including entropy, K-Means clustering, and K-Nearest Neighbors, alongside traditional analytical methods. This approach provides a comprehensive analysis of color distribution, regional variation, and the overall value of the masterpiece. The results reveal significant inter-painting variations and uncover intricate color dependencies that challenge assumptions of uniformity. Furthermore, the restoration of the damaged region in &quot;Blue Marilyn&quot; highlights the complexity of Warhol&#39;s color choices and contributes to the ongoing discussion about the potential value of the series. These findings offer new insights into Warhol’s aesthetic decisions, deepening our understanding of the role of color perception in contemporary art.",
+    "relatedLink": "https://shotmarilyns.gd.edu.kg/",
+    "comment": "Methods changed.",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  }
+}
