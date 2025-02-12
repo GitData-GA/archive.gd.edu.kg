@@ -1,0 +1,44 @@
+{
+  "20240914190729/v1": {
+    "title": "NYC Newborn Analysis 2011-2019",
+    "subject": "Data Science (Applications)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2024/09/14",
+    "keywords": [
+      "Logistic Regression",
+      "Decision Tree",
+      "Python"
+    ],
+    "author": [
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Nathan",
+        "lastName": "Lam"
+      },
+      {
+        "firstName": "Timothy",
+        "lastName": "Tu"
+      },
+      {
+        "firstName": "Urata",
+        "lastName": "Yuki"
+      },
+      {
+        "firstName": "Shun",
+        "lastName": "Yao"
+      },
+      {
+        "firstName": "Kahyun",
+        "lastName": "Jo"
+      }
+    ],
+    "abstract": "The population of baby names has names come and go, and some have evolved. We wanted to see if we could predict sex based on ethnicity and name characteristics to see how these influences shift a name’s sex. The dataset we used was publicly available data from the city of New York containing the top 75 most popular names for each sex and ethnic category for each year from 2011-2019. Through our analysis on the dataset in regard to sex, we saw that there was a high correlation between name endings with a vowel and sex, where female names were 10 times more likely to end with a vowel. Other factors, such as ethnicity, the amount of syllables in the name, the length of the name, and whether the name started with a vowel had statistically significant but small correlation with sex.",
+    "submitterID": "user_2spvYQ9AjrISg3WoP6dprXUp6F6"
+  }
+}
