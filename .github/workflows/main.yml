@@ -13,9 +13,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Merge JSON Files
+      - name: Merge and Minify JSON Files
         run: |
-          jq -s 'reduce .[] as $item ({}; . * $item)' json/*.json > metadata.json
+          jq -c -s 'reduce .[] as $item ({}; . * $item)' json/*.json > metadata.json
 
       - name: Commit and Push Changes
         run: |
