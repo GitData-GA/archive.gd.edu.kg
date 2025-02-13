@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /*.json$
+
+Sitemap: https://archive.gd.edu.kg/sitemap.xml
