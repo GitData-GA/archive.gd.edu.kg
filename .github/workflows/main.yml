@@ -22,8 +22,15 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          # Add root and all subdirectories (excluding json, abs, pdf)
-          find . -type f -name "index.html" ! -path "./json/*" ! -path "./abs/*" ! -path "./pdf/*" | while read file; do
+          # Add root URL manually with priority 1
+          echo '<url>' >> sitemap.xml
+          echo "  <loc>https://archive.gd.edu.kg/</loc>" >> sitemap.xml
+          echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S%z")</lastmod>" >> sitemap.xml
+          echo '  <priority>1</priority>' >> sitemap.xml
+          echo '</url>' >> sitemap.xml
+          
+          # Add index.html from all subdirectories (excluding json, abs, pdf, and root index.html)
+          find . -type f -name "index.html" ! -path "./json/*" ! -path "./abs/*" ! -path "./pdf/*" ! -path "./index.html" | while read file; do
             path=$(dirname "$file" | sed 's|^\./||')  # Remove leading ./
             url="https://archive.gd.edu.kg/${path}/"
             echo '<url>' >> sitemap.xml
