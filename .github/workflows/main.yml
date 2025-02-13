@@ -1,4 +1,4 @@
-name: Combine JSON Files
+name: Combine Metadata and Generate Sitemap
 
 on:
   push:
@@ -7,20 +7,89 @@ on:
   workflow_dispatch:
 
 jobs:
-  combine-json:
-    runs-on: ubuntu-latest
+  process-files:
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Merge and Minify JSON Files
+      - name: Check for New HTML or PDF Files
+        id: check_new_files
+        run: |
+          NEW_FILES=$(git ls-files --others --exclude-standard | grep -E '(\.html|\.pdf)$' || true)
+          if [[ -z "$NEW_FILES" ]]; then
+            echo "No new HTML or PDF files found. Skipping workflow."
+            exit 1
+          fi
+
+      - name: Combine Metadata
         run: |
           jq -c -s 'reduce .[] as $item ({}; . * $item)' json/*.json > metadata.json
+
+      - name: Generate Sitemap
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+
+          # Add root and all subdirectories (excluding json, abs, pdf)
+          find . -type f -name "index.html" ! -path "./json/*" ! -path "./abs/*" ! -path "./pdf/*" | while read file; do
+            path=$(dirname "$file" | sed 's|^\./||')  # Remove leading ./
+            url="https://archive.gd.edu.kg/${path}/"
+            echo '<url>' >> sitemap.xml
+            echo "  <loc>$url</loc>" >> sitemap.xml
+            echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S%z")</lastmod>" >> sitemap.xml
+            echo '  <priority>0.8</priority>' >> sitemap.xml
+            echo '</url>' >> sitemap.xml
+          done
+
+          # Process HTML files under /abs/YYYYMMDDHHMMSS/
+          find abs/ -type f -name "*.html" | while read file; do
+            dir=$(dirname "$file")
+            base=$(basename "$file" .html)
+            yyyymmddhhmmss=$(basename "$dir")
+
+            if [[ "$base" == "index" ]]; then
+              url="https://archive.gd.edu.kg/abs/$yyyymmddhhmmss/"
+              priority="0.8"
+            else
+              url="https://archive.gd.edu.kg/abs/$yyyymmddhhmmss/$base"
+              priority="0.64"
+            fi
+
+            echo '<url>' >> sitemap.xml
+            echo "  <loc>$url</loc>" >> sitemap.xml
+            echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S%z")</lastmod>" >> sitemap.xml
+            echo "  <priority>$priority</priority>" >> sitemap.xml
+            echo '</url>' >> sitemap.xml
+          done
+
+          # Process PDF files under /pdf/YYYYMMDDHHMMSS/
+          find pdf/ -type f -name "*.pdf" | while read file; do
+            dir=$(dirname "$file")
+            base=$(basename "$file" .pdf)
+            yyyymmddhhmmss=$(basename "$dir")
+
+            if [[ "$base" == "index" ]]; then
+              url="https://archive.gd.edu.kg/pdf/$yyyymmddhhmmss/index.pdf"
+              priority="0.8"
+            else
+              url="https://archive.gd.edu.kg/pdf/$yyyymmddhhmmss/$base.pdf"
+              priority="0.64"
+            fi
+
+            echo '<url>' >> sitemap.xml
+            echo "  <loc>$url</loc>" >> sitemap.xml
+            echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S%z")</lastmod>" >> sitemap.xml
+            echo "  <priority>$priority</priority>" >> sitemap.xml
+            echo '</url>' >> sitemap.xml
+          done
+
+          echo '</urlset>' >> sitemap.xml
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add metadata.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update metadata.json"
+          git add metadata.json sitemap.xml
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update metadata.json and sitemap.xml"
           git push
