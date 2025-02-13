@@ -1,0 +1,33 @@
+{
+  "20231224040449/v1": {
+    "title": "Predictive Modeling of Blood Pressure Categories: Integrating Demographic and Dietary Factors for Personalized Management",
+    "subject": "Data Science (Applications)",
+    "license": "CC BY-NC-SA",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2023/12/24",
+    "keywords": [
+      "blood pressure",
+      "multinomial regression",
+      "lasso",
+      "tree",
+      "gradient boosting",
+      "xgboost",
+      "R"
+    ],
+    "author": [
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      }
+    ],
+    "abstract": "This study delves into predictive modeling of blood pressure categories, focusing on the United States, addressing the global health concern of hypertension. Mainly utilizing demographic and dietary data from the CDC National Health and Nutrition Examination Survey (NHANES) 2017-2018, aims to craft personalized management strategies. Drawing on research emphasizing the multifaceted determinants of hypertension, we leverage the multinomial regression model with lasso regularization as a baseline. Furthermore, the study advances to the extreme gradient boosting (XGB) algorithm, achieving a slightly better performance than multinomial regression. Evaluation metrics include accuracy and Area Under the Curve (AUC) in a 10-fold cross-validation framework. The study provides possible personal blood pressure management solution.",
+    "relatedPublishment": {
+      "name": "PREPRINTS.RU",
+      "url": "https://preprints.ru/article/1216/"
+    },
+    "relatedLink": "https://bpmodel.ly.gd.edu.kg/",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  }
+}
