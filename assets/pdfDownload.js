@@ -36,11 +36,11 @@ async function downloadFile(url) {
             if (index === 0) return;
             const { width, height } = page.getSize();
             page.drawText(message, {
-                x: width / 16,
+                x: width / 24,
                 y: height / 4,
                 size: 11,
                 font: timesRomanFont,
-                color: rgb(0.6, 0.6, 0.6),
+                color: rgb(0.502, 0.502, 0.502),
                 rotate: degrees(90),
             });
         });
