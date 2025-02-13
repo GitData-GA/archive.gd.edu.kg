@@ -95,8 +95,54 @@
     "subject": "Data Science (Applications)",
     "license": "CC BY-SA",
     "predecessor": "20231224042259/v2",
-    "successor": null,
+    "successor": "20231224042259/v4",
     "submissionDate": "2023/12/25",
+    "keywords": [
+      "H5N1",
+      "avian influenza",
+      "risk assessment",
+      "classification",
+      "regularization",
+      "xgboost",
+      "R"
+    ],
+    "author": [
+      {
+        "firstName": "Weilin",
+        "lastName": "Cheng"
+      },
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Kathy",
+        "lastName": "Mo",
+        "orcid": "0009-0007-8456-5656"
+      },
+      {
+        "firstName": "Sida",
+        "lastName": "Tian",
+        "orcid": "0009-0007-7056-2876"
+      },
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      }
+    ],
+    "abstract": "This research uniquely focuses on predicting the likelihood of H5N1 outbreaks in the United States at the county level. Unlike previous studies, which either excluded the United States or used outdated data, we utilized diverse statistical techniques and publicly available H5N1-related data from January 2022 to March 2023. Employing logistic regression, regularization methods, cross-validation, and eXtreme Gradient Boosting (XGBoost), our models demonstrated remarkable predictive efficacy. Notably, the XGBoost model, trained with 10-fold cross-validation, outperformed others in terms of ROC-AUC. This research provides valuable epidemiological insights, proposes intervention strategies for H5N1 in the United States, and suggests future research directions.",
+    "relatedLink": "https://h5n1.gd.edu.kg/",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  },
+  "20231224042259/v4": {
+    "title": "Predictive Modeling of H5N1 Bird Flu in United States of America: A 2022-2023 Analysis",
+    "subject": "Data Science (Applications)",
+    "license": "CC BY-SA",
+    "predecessor": "20231224042259/v3",
+    "successor": null,
+    "submissionDate": "2024/01/30",
     "keywords": [
       "H5N1",
       "avian influenza",
