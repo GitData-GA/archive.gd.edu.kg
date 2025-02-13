@@ -13,12 +13,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Check for New HTML or PDF Files
-        id: check_new_files
+      - name: Check for New or Deleted HTML/PDF Files
+        id: check_new_or_deleted_files
         run: |
-          NEW_FILES=$(git ls-files --others --exclude-standard | grep -E '(\.html|\.pdf)$' || true)
-          if [[ -z "$NEW_FILES" ]]; then
-            echo "No new HTML or PDF files found. Skipping workflow."
+          NEW_OR_DELETED_FILES=$(git diff --diff-filter=AD --name-only HEAD~1 | grep -E '(\.html|\.pdf)$' || true)
+          if [[ -z "$NEW_OR_DELETED_FILES" ]]; then
+            echo "No new or deleted HTML/PDF files found. Skipping workflow."
             exit 1
           fi
 
