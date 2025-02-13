@@ -4,7 +4,7 @@
     "subject": "Computer Science (Computer Vision and Pattern Recognition)",
     "license": "CC BY",
     "predecessor": null,
-    "successor": null,
+    "successor": "20231224043044/v2",
     "submissionDate": "2023/12/24",
     "keywords": [
       "shot marilyns",
@@ -33,5 +33,55 @@
     ],
     "abstract": "This paper explores the differences and commons between five different versions of Shot Marilyns done by Andy Warhol. We conducted a comprehensive analysis of color composition and distribution in a set of art pieces. Using various methods such as relative conditional entropy, we explored the distinct color distributions and correlations within each image. By clustering the images and examining specific regions of interest (ROIs), including backgrounds, hair, eyeshadow, and face, we gained detailed insights into the construction and differences of each image. We also observed that initial expectations of uniform colors for certain elements were not met, highlighting the complexity and deceptive nature of color perception in art.",
     "submitterID": "user_2spvYQ9AjrISg3WoP6dprXUp6F6"
+  },
+  "20231224043044/v2": {
+    "title": "Unveiling Color Dynamics and Value of Andy Warhol's \"Shot Marilyns\": A Study on Visual Variations and Perception",
+    "subject": "Computer Science (Computer Vision and Pattern Recognition)",
+    "license": "CC BY-SA",
+    "predecessor": "20231224043044/v1",
+    "successor": null,
+    "submissionDate": "2024/11/02",
+    "keywords": [
+      "shot marilyns",
+      "pop art",
+      "andy warhol",
+      "region of interest"
+    ],
+    "author": [
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      },
+      {
+        "firstName": "Kathy",
+        "lastName": "Mo",
+        "orcid": "0009-0007-8456-5656"
+      },
+      {
+        "firstName": "Xinhui",
+        "lastName": "Luo",
+        "orcid": "0009-0005-9143-9012"
+      },
+      {
+        "firstName": "Weilin",
+        "lastName": "Cheng",
+        "orcid": "0009-0008-1204-4234"
+      },
+      {
+        "firstName": "Erick S.",
+        "lastName": "Arenas V.",
+        "orcid": "0009-0007-3655-8312"
+      }
+    ],
+    "abstract": "This study investigates the visual dynamics and value of Andy Warhol’s &quot;Shot Marilyns&quot; series through the innovative application of statistical techniques, including entropy, K-Means clustering, and K-Nearest Neighbors, alongside traditional analytical methods. This approach provides a comprehensive analysis of color distribution, regional variation, and the overall value of the masterpiece. The results reveal significant inter-painting variations and uncover intricate color dependencies that challenge assumptions of uniformity. Furthermore, the restoration of the damaged region in &quot;Blue Marilyn&quot; highlights the complexity of Warhol&#39;s color choices and contributes to the ongoing discussion about the potential value of the series. These findings offer new insights into Warhol’s aesthetic decisions, deepening our understanding of the role of color perception in contemporary art.",
+    "relatedLink": "https://shotmarilyns.gd.edu.kg/",
+    "comment": "Methods changed.",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
   }
 }
