@@ -20,10 +20,21 @@
         <script>
             (function() {
                 let path = window.location.pathname;
-                let match = path.match(/^\/(\d{14})(\/v\d+)?\/?$/);
-                if (match) {
-                    let newUrl = "/abs/" + match[1] + (match[2] || "") + "/";
+                
+                // Case 1: Redirect /YYYYMMDDHHMMSS/ and /YYYYMMDDHHMMSS/vX/ to /abs/...
+                let matchAbs = path.match(/^\/(\d{14})(\/v\d+)?\/?$/);
+                if (matchAbs) {
+                    let newUrl = "/abs/" + matchAbs[1] + (matchAbs[2] || "") + "/";
                     window.location.replace(newUrl);
+                    return;
+                }
+        
+                // Case 2: Redirect /YYYYMMDDHHMMSS/vX.pdf to /pdf/...
+                let matchPdf = path.match(/^\/(\d{14})\/(v\d+\.pdf)$/);
+                if (matchPdf) {
+                    let newUrl = "/pdf/" + matchPdf[1] + "/" + matchPdf[2];
+                    window.location.replace(newUrl);
+                    return;
                 }
             })();
         </script>
