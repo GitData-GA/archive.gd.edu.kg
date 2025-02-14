@@ -29,7 +29,7 @@
                 // Case 2: Redirect /YYYYMMDDHHMMSS/vX.pdf to /pdf/...
                 let matchPdf = path.match(/^\/(\d{14})\/(v\d+\.pdf)$/);
                 if (matchPdf) {
-                    let newUrl = "/pdf/" + matchPdf[1] + "/index.pdf";
+                    let newUrl = "/pdf/" + matchPdf[1] + "/" + matchPdf[2];
                     window.location.replace(newUrl);
                     return;
                 }
