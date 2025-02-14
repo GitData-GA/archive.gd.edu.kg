@@ -14,9 +14,6 @@
         <style>@font-face{font-family:Afacad;src:url(https://archive.gd.edu.kg/assets/Afacad-Regular.ttf);font-weight:400}</style>
         <style>@font-face{font-family:Afacad_Bold;src:url(https://archive.gd.edu.kg/assets/Afacad-Bold.ttf);font-weight:500}</style>
         <!-- JavaScript -->
-        <script src="https://archive.gd.edu.kg/assets/jquery.min.js" type="text/javascript"></script>
-        <script src="https://archive.gd.edu.kg/assets/footerMenu.js" type="text/javascript"></script>
-        <script src="https://archive.gd.edu.kg/assets/headMenu.js" type="text/javascript"></script>
         <script>
             (function() {
                 let path = window.location.pathname;
@@ -32,12 +29,15 @@
                 // Case 2: Redirect /YYYYMMDDHHMMSS/vX.pdf to /pdf/...
                 let matchPdf = path.match(/^\/(\d{14})\/(v\d+\.pdf)$/);
                 if (matchPdf) {
-                    let newUrl = "/pdf/" + matchPdf[1] + "/" + matchPdf[2];
+                    let newUrl = "/pdf/" + matchPdf[1] + "/index.pdf";
                     window.location.replace(newUrl);
                     return;
                 }
             })();
         </script>
+        <script src="https://archive.gd.edu.kg/assets/jquery.min.js" type="text/javascript"></script>
+        <script src="https://archive.gd.edu.kg/assets/footerMenu.js" type="text/javascript"></script>
+        <script src="https://archive.gd.edu.kg/assets/headMenu.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="app">
