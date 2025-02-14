@@ -20,9 +20,9 @@
         <script>
             (function() {
                 let path = window.location.pathname;
-                let match = path.match(/^\/(\d{14})\/?$/);
+                let match = path.match(/^\/(\d{14})(\/v\d+)?\/?$/);
                 if (match) {
-                    let newUrl = "/abs/" + match[1] + "/";
+                    let newUrl = "/abs/" + match[1] + (match[2] || "") + "/";
                     window.location.replace(newUrl);
                 }
             })();
