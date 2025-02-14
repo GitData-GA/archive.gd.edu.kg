@@ -20,7 +20,7 @@ function getQueryParams() {
 }
 
 function extractPreprintID(queryID) {
-    return queryID ? queryID.split('%2F')[0] : null;
+    return queryID.substring(0,14);
 }
 
 function checkForUpdate() {
