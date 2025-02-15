@@ -19,8 +19,7 @@ jobs:
 
       - name: Generate Recent Preprints
         run: |
-          # Extract all entries, sort by key (preprint ID) in descending order, take top 5
-          jq '[to_entries[]] | sort_by(.key) | reverse | .[0:5] | from_entries' metadata.json > recent-preprints.json
+          jq '[to_entries[]] | sort_by(.value.submissionDate) | reverse | .[0:5] | from_entries' metadata.json > recent-preprints.json
 
       - name: Generate Sitemap
         run: |
