@@ -16,21 +16,27 @@ jobs:
       - name: Combine Metadata
         run: |
           jq -c -s 'reduce .[] as $item ({}; . * $item)' json/*.json > metadata.json
-          jq -s 'reduce .[] as $item ({}; . * $item) | to_entries | sort_by(.key) | reverse | .[:5] | from_entries' metadata.json > recent-preprints.json
+
+      - name: Generate Recent Preprints
+        run: |
+          # Extract all entries, sort by key (preprint ID) in descending order, take top 5
+          jq '[to_entries[]] | sort_by(.key) | reverse | .[0:5] | from_entries' metadata.json > recent-preprints.json
 
       - name: Generate Sitemap
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
+          # Add root URL manually with priority 1
           echo '<url>' >> sitemap.xml
           echo "  <loc>https://archive.gd.edu.kg/</loc>" >> sitemap.xml
           echo "  <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S%:z")</lastmod>" >> sitemap.xml
           echo '  <priority>1</priority>' >> sitemap.xml
           echo '</url>' >> sitemap.xml
-
+          
+          # Add index.html from all subdirectories (excluding json, abs, pdf, and root index.html)
           find . -type f -name "index.html" ! -path "./json/*" ! -path "./abs/*" ! -path "./pdf/*" ! -path "./index.html" | while read file; do
-            path=$(dirname "$file" | sed 's|^\./||')
+            path=$(dirname "$file" | sed 's|^\./||')  # Remove leading ./
             url="https://archive.gd.edu.kg/${path}/"
             echo '<url>' >> sitemap.xml
             echo "  <loc>$url</loc>" >> sitemap.xml
@@ -39,11 +45,12 @@ jobs:
             echo '</url>' >> sitemap.xml
           done
 
+          # Process HTML files under /abs/YYYYMMDDHHMMSS/
           find abs/ -type f -name "*.html" | while read file; do
             dir=$(dirname "$file")
             base=$(basename "$file" .html)
             yyyymmddhhmmss=$(basename "$dir")
-            
+
             if [[ "$base" == "index" ]]; then
               url="https://archive.gd.edu.kg/abs/$yyyymmddhhmmss/"
               priority="0.8"
@@ -59,6 +66,7 @@ jobs:
             echo '</url>' >> sitemap.xml
           done
 
+          # Process PDF files under /pdf/YYYYMMDDHHMMSS/
           find pdf/ -type f -name "*.pdf" | while read file; do
             dir=$(dirname "$file")
             base=$(basename "$file" .pdf)
