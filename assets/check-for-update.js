@@ -63,7 +63,7 @@ async function checkForUpdate() {
             resultDiv.innerHTML = 
             `<p><a href="https://archive.gd.edu.kg/abs/${keysReverse[i].substring(0,14)}/">archive.gd.edu.kg/abs/${preprintID}/</a>&nbsp;&nbsp;<span class="article-tag">${preprint[keysReverse[i]].subject}</span> (${keysReverse[i].substring(15)})</p>
             <b><p>${preprint[keysReverse[i]].title}</p></b>
-            <p><b>Submission date</b>: ${preprint[keysReverse[i]].submissionDate}</p>
+            <p><b>Submission date</b>: ${preprint[keysReverse[i]].submissionDate.substring(0, 4)}/${preprint[keysReverse[i]].submissionDate.substring(4, 6)}/${preprint[keysReverse[i]].submissionDate.substring(6, 8)}</p>
             <p><b>Author</b>: ${authorsString}</p> 
             <p><b>Abstract</b>: ${truncatedAbstract}</p>
             <hr>`;
@@ -71,7 +71,7 @@ async function checkForUpdate() {
             resultDiv.innerHTML = 
             `<p><a href="https://archive.gd.edu.kg/abs/${keysReverse[i]}">archive.gd.edu.kg/abs/${keysReverse[i]}</a>&nbsp;&nbsp;<span class="article-tag">${preprint[keysReverse[i]].subject}</span> (${keysReverse[i].substring(15)})</p>
             <b><p>${preprint[keysReverse[i]].title}</p></b>
-            <p><b>Submission date</b>: ${preprint[keysReverse[i]].submissionDate.substring(0, 4)}/${preprint[keysReverse[i]].submissionDate.substring(4, 6)}/${preprint[keysReverse[i]].submissionDate.substring(6, 8)}/</p>
+            <p><b>Submission date</b>: ${preprint[keysReverse[i]].submissionDate.substring(0, 4)}/${preprint[keysReverse[i]].submissionDate.substring(4, 6)}/${preprint[keysReverse[i]].submissionDate.substring(6, 8)}</p>
             <p><b>Author</b>: ${authorsString}</p> 
             <p><b>Abstract</b>: ${truncatedAbstract}</p>
             <hr>`;
