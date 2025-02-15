@@ -1,0 +1,152 @@
+{
+  "20241230074419/v1": {
+    "title": "Data Efficient Dense Cross-Lingual Information Retrieval",
+    "subject": "Computer Science (Computation and Language)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2024/12/30",
+    "keywords": [
+      "LLMs",
+      "Cross-Lingual Information Retrieval (CIR)",
+      "Translation"
+    ],
+    "author": [
+      {
+        "firstName": "Luc",
+        "lastName": "Chen"
+      },
+      {
+        "firstName": "Yinan",
+        "lastName": "He"
+      },
+      {
+        "firstName": "Alayna",
+        "lastName": "Nguyen"
+      }
+    ],
+    "abstract": "Cross-Lingual Information Retrieval (CIR) remains challenging due to limited annotated data and linguistic diversity, especially for low-resource languages. While dense retrieval models have significantly advanced retrieval performance, their reliance on large-scale training datasets hampers their effectiveness in multilingual settings. In this work, we propose two complementary strategies to improve data efficiency and robustness in CIR model fine- tuning. First, we introduce a paraphrase-based query augmentation pipeline leveraging large language models (LLMs) to enrich scarce training data, thereby promoting more robust and language-agnostic representations. Second, we present a weighted InfoNCE loss that emphasizes underrepresented languages, ensuring balanced optimization across heterogeneous linguistic inputs. Experiments on cross-lingual benchmark datasets demonstrate that our combined approaches yield substantial gains in retrieval quality, outperforming standard training protocols on small and imbalanced datasets. These results underscore the potential of targeted data augmentation and reweighted objectives to build more inclusive and effective CIR systems, even under resource constraints.",
+    "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
+  },
+  "20241230073542/v1": {
+    "title": "Curriculum Learning For Autonomous Vehicles",
+    "subject": "Data Science (Machine Learning)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2024/12/30",
+    "keywords": [
+      "Reinforcement learning (RL)",
+      "Curriculum Learning",
+      "Autonomous Vehicles",
+      "MDP",
+      "Reward Function"
+    ],
+    "author": [
+      {
+        "firstName": "Luc",
+        "lastName": "Chen"
+      },
+      {
+        "firstName": "Michelle",
+        "lastName": "Chang"
+      },
+      {
+        "firstName": "Theo",
+        "lastName": "Lebryk"
+      }
+    ],
+    "abstract": "This study investigates how the sequence of training environments affects performance in simple driving tasks for an autonomous driving agent. By training agents solely through interaction with maps of varying difficulty, we demonstrate that transfer learning enhances performance within single-environment driving scenarios. However, we find that agents struggle to master advanced driving capabilities and fail to generalize well to new environments, regardless of the sequence of training data. We conclude by looking at areas to build on this work such by combining imitation learning with curriculum learning and developing curriculum-specific MDP.",
+    "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
+  },
+  "20241229182247/v2": {
+    "title": "The Causal Impact of Dean’s List Recognition on  Academic Performance: Evidence from a  Regression Discontinuity Design",
+    "subject": "Economics (Econometrics)",
+    "license": "CC BY",
+    "predecessor": "20241229182247/v1",
+    "successor": null,
+    "submissionDate": "2025/01/05",
+    "keywords": [
+      "Dean’s List",
+      "Future Academic Performance",
+      "Regression discontinuity design",
+      "Econometrics"
+    ],
+    "author": [
+      {
+        "firstName": "Luc",
+        "lastName": "Chen"
+      }
+    ],
+    "abstract": "This study examines the causal impact of being placed on the Dean’s List, a positive education incentive, on future student performance using a regression discontinuity design. The results suggest that for students with low prior academic performance and who are native English speakers, there is a positive impact of being on the Dean’s List on the probability of getting onto the Dean’s List in the following year. However, being on the Dean’s List does not appear to have a statistically significant effect on subsequent GPA, total credits taken, dropout rates, or the probability of graduating within four years. These findings suggest that a place on the Dean’s List may not be a strong motivator for students to improve their academic performance and achieve better outcomes.",
+    "relatedPublishment": {
+      "name": "arXiv",
+      "url": "https://arxiv.org/abs/2501.09763"
+    },
+    "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
+  },
+  "20241229182247/v1": {
+    "title": "Student Future Academic Performance after Being Placed on Dean’s List",
+    "subject": "Economics (Econometrics)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": "20241229182247/v2",
+    "submissionDate": "2024/12/29",
+    "keywords": [
+      "Dean’s List",
+      "Future Academic Performance",
+      "Regression discontinuity design",
+      "Econometrics"
+    ],
+    "author": [
+      {
+        "firstName": "Luc",
+        "lastName": "Chen"
+      }
+    ],
+    "abstract": "This study examines the causal impact of being placed on the Dean&#39;s List, a positive education incentive, on future student performance using a regression discontinuity design. The results suggest that for students with low prior academic performance and who are native English speakers, there is a positive impact of being on the Dean’s List on the probability of getting onto the Dean&#39;s List in the following year. However, being on the Dean&#39;s List does not appear to have a statistically significant effect on subsequent GPA, total credits taken, dropout rates, or the probability of graduating within four years. These findings suggest that a place on the Dean&#39;s List may not be a strong motivator for students to improve their academic performance and achieve better outcomes.",
+    "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
+  },
+  "20240914190729/v1": {
+    "title": "NYC Newborn Analysis 2011-2019",
+    "subject": "Data Science (Applications)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "2024/09/14",
+    "keywords": [
+      "Logistic Regression",
+      "Decision Tree",
+      "Python"
+    ],
+    "author": [
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Nathan",
+        "lastName": "Lam"
+      },
+      {
+        "firstName": "Timothy",
+        "lastName": "Tu"
+      },
+      {
+        "firstName": "Urata",
+        "lastName": "Yuki"
+      },
+      {
+        "firstName": "Shun",
+        "lastName": "Yao"
+      },
+      {
+        "firstName": "Kahyun",
+        "lastName": "Jo"
+      }
+    ],
+    "abstract": "The population of baby names has names come and go, and some have evolved. We wanted to see if we could predict sex based on ethnicity and name characteristics to see how these influences shift a name’s sex. The dataset we used was publicly available data from the city of New York containing the top 75 most popular names for each sex and ethnic category for each year from 2011-2019. Through our analysis on the dataset in regard to sex, we saw that there was a high correlation between name endings with a vowel and sex, where female names were 10 times more likely to end with a vowel. Other factors, such as ethnicity, the amount of syllables in the name, the length of the name, and whether the name started with a vowel had statistically significant but small correlation with sex.",
+    "submitterID": "user_2spvYQ9AjrISg3WoP6dprXUp6F6"
+  }
+}
