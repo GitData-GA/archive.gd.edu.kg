@@ -16,11 +16,7 @@ jobs:
       - name: Combine Metadata
         run: |
           jq -c -s 'reduce .[] as $item ({}; . * $item)' json/*.json > metadata.json
-
-      - name: Generate Recent Preprints
-        run: |
-          echo '{}' > recent-preprints.json
-          jq -s 'reduce .[] as $item ({}; . * $item) | to_entries | sort_by(.key) | reverse | .[:5] | from_entries' json/*.json > recent-preprints.json
+          jq -s 'reduce .[] as $item ({}; . * $item) | to_entries | sort_by(.key) | reverse | .[:5] | from_entries' metadata.json > recent-preprints.json
 
       - name: Generate Sitemap
         run: |
