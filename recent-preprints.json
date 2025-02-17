@@ -1,4 +1,50 @@
 {
+  "20250217101443/v1": {
+    "title": "(TEST) Journal Article Reporting Standards for Qualitative Primary, Qualitative Meta-Analytic, and Mixed Methods Research in Psychology: The APA Publications and Communications Board Task Force Report",
+    "subject": "Data Science (Methodology)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "20250217101443",
+    "keywords": [
+      "qualitative research methods",
+      "qualitative meta-analysis",
+      "reporting standards",
+      "mixed methods",
+      "APA"
+    ],
+    "author": [
+      {
+        "firstName": "Heidi",
+        "lastName": "Levitt",
+        "middleName": "M."
+      },
+      {
+        "firstName": "Michael",
+        "lastName": "Bamberg"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Creswell",
+        "middleName": "W."
+      },
+      {
+        "firstName": "David",
+        "lastName": "Frost",
+        "middleName": "M."
+      },
+      {
+        "firstName": "Ruthellen",
+        "lastName": "Josselson"
+      },
+      {
+        "firstName": "Carola",
+        "lastName": "Suárez-Orozco"
+      }
+    ],
+    "abstract": "The American Psychological Association Publications and Communications Board Working Group on Journal Article Reporting Standards for Qualitative Research (JARS–Qual Working Group) was charged with examining the state of journal article reporting standards as they applied to qualitative research and with generating recommendations for standards that would be appropriate for a wide range of methods within the discipline of psychology. These standards describe what should be included in a research report to enable and facilitate the review process. This publication marks a historical moment—the first inclusion of qualitative research in APA Style, which is the basis of both the Publication Manual of the American Psychological Association (APA, 2010) and APA Style CENTRAL, an online program to support APA Style. In addition to the general JARS–Qual guidelines, the Working Group has developed standards for both qualitative meta-analysis and mixed methods research. The reporting standards were developed for psychological qualitative research but may hold utility for a broad range of social sciences. They honor a range of qualitative traditions, methods, and reporting styles. The Working Group was composed of a group of researchers with backgrounds in varying methods, research topics, and approaches to inquiry. In this article, they present these standards and their rationale, and they detail the ways that the standards differ from the quantitative research reporting standards. They describe how the standards can be used by authors in the process of writing qualitative research for submission as well as by reviewers and editors in the process of reviewing research.",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  },
   "20241229182247/v2": {
     "title": "The Causal Impact of Dean’s List Recognition on  Academic Performance: Evidence from a  Regression Discontinuity Design",
     "subject": "Economics (Econometrics)",
@@ -106,55 +152,5 @@
     ],
     "abstract": "This study examines the causal impact of being placed on the Dean&#39;s List, a positive education incentive, on future student performance using a regression discontinuity design. The results suggest that for students with low prior academic performance and who are native English speakers, there is a positive impact of being on the Dean’s List on the probability of getting onto the Dean&#39;s List in the following year. However, being on the Dean&#39;s List does not appear to have a statistically significant effect on subsequent GPA, total credits taken, dropout rates, or the probability of graduating within four years. These findings suggest that a place on the Dean&#39;s List may not be a strong motivator for students to improve their academic performance and achieve better outcomes.",
     "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
-  },
-  "20231224043044/v2": {
-    "title": "Unveiling Color Dynamics and Value of Andy Warhol's \"Shot Marilyns\": A Study on Visual Variations and Perception",
-    "subject": "Computer Science (Computer Vision and Pattern Recognition)",
-    "license": "CC BY-SA",
-    "predecessor": "20231224043044/v1",
-    "successor": null,
-    "submissionDate": "20241102191310",
-    "keywords": [
-      "shot marilyns",
-      "pop art",
-      "andy warhol",
-      "region of interest"
-    ],
-    "author": [
-      {
-        "firstName": "Hengyuan",
-        "lastName": "Liu",
-        "orcid": "0009-0007-3162-2071"
-      },
-      {
-        "firstName": "Li",
-        "lastName": "Yuan",
-        "orcid": "0009-0008-1075-9922"
-      },
-      {
-        "firstName": "Kathy",
-        "lastName": "Mo",
-        "orcid": "0009-0007-8456-5656"
-      },
-      {
-        "firstName": "Xinhui",
-        "lastName": "Luo",
-        "orcid": "0009-0005-9143-9012"
-      },
-      {
-        "firstName": "Weilin",
-        "lastName": "Cheng",
-        "orcid": "0009-0008-1204-4234"
-      },
-      {
-        "firstName": "Erick S.",
-        "lastName": "Arenas V.",
-        "orcid": "0009-0007-3655-8312"
-      }
-    ],
-    "abstract": "This study investigates the visual dynamics and value of Andy Warhol’s &quot;Shot Marilyns&quot; series through the innovative application of statistical techniques, including entropy, K-Means clustering, and K-Nearest Neighbors, alongside traditional analytical methods. This approach provides a comprehensive analysis of color distribution, regional variation, and the overall value of the masterpiece. The results reveal significant inter-painting variations and uncover intricate color dependencies that challenge assumptions of uniformity. Furthermore, the restoration of the damaged region in &quot;Blue Marilyn&quot; highlights the complexity of Warhol&#39;s color choices and contributes to the ongoing discussion about the potential value of the series. These findings offer new insights into Warhol’s aesthetic decisions, deepening our understanding of the role of color perception in contemporary art.",
-    "relatedLink": "https://shotmarilyns.gd.edu.kg/",
-    "comment": "Methods changed.",
-    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
   }
 }
