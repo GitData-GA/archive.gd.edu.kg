@@ -4,7 +4,7 @@
     "subject": "Data Science (Methodology)",
     "license": "CC BY",
     "predecessor": null,
-    "successor": null,
+    "successor": "20250217101443/v2",
     "submissionDate": "20250217101443",
     "keywords": [
       "qualitative research methods",
@@ -40,6 +40,31 @@
       {
         "firstName": "Carola",
         "lastName": "Suárez-Orozco"
+      }
+    ],
+    "abstract": "The American Psychological Association Publications and Communications Board Working Group on Journal Article Reporting Standards for Qualitative Research (JARS–Qual Working Group) was charged with examining the state of journal article reporting standards as they applied to qualitative research and with generating recommendations for standards that would be appropriate for a wide range of methods within the discipline of psychology. These standards describe what should be included in a research report to enable and facilitate the review process. This publication marks a historical moment—the first inclusion of qualitative research in APA Style, which is the basis of both the Publication Manual of the American Psychological Association (APA, 2010) and APA Style CENTRAL, an online program to support APA Style. In addition to the general JARS–Qual guidelines, the Working Group has developed standards for both qualitative meta-analysis and mixed methods research. The reporting standards were developed for psychological qualitative research but may hold utility for a broad range of social sciences. They honor a range of qualitative traditions, methods, and reporting styles. The Working Group was composed of a group of researchers with backgrounds in varying methods, research topics, and approaches to inquiry. In this article, they present these standards and their rationale, and they detail the ways that the standards differ from the quantitative research reporting standards. They describe how the standards can be used by authors in the process of writing qualitative research for submission as well as by reviewers and editors in the process of reviewing research.",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  },
+  "20250217101443/v2": {
+    "title": "Journal Article Reporting Standards for Qualitative Primary, Qualitative Meta-Analytic, and Mixed Methods Research in Psychology: The APA Publications and Communications Board Task Force Report",
+    "subject": "Biology (Ecology)",
+    "license": "CC BY-SA",
+    "predecessor": "20250217101443/v1",
+    "successor": null,
+    "submissionDate": "20250217125611",
+    "keywords": [
+      "111",
+      "222",
+      "333"
+    ],
+    "author": [
+      {
+        "firstName": "test1",
+        "lastName": "test2"
+      },
+      {
+        "firstName": "test3",
+        "lastName": "test4"
       }
     ],
     "abstract": "The American Psychological Association Publications and Communications Board Working Group on Journal Article Reporting Standards for Qualitative Research (JARS–Qual Working Group) was charged with examining the state of journal article reporting standards as they applied to qualitative research and with generating recommendations for standards that would be appropriate for a wide range of methods within the discipline of psychology. These standards describe what should be included in a research report to enable and facilitate the review process. This publication marks a historical moment—the first inclusion of qualitative research in APA Style, which is the basis of both the Publication Manual of the American Psychological Association (APA, 2010) and APA Style CENTRAL, an online program to support APA Style. In addition to the general JARS–Qual guidelines, the Working Group has developed standards for both qualitative meta-analysis and mixed methods research. The reporting standards were developed for psychological qualitative research but may hold utility for a broad range of social sciences. They honor a range of qualitative traditions, methods, and reporting styles. The Working Group was composed of a group of researchers with backgrounds in varying methods, research topics, and approaches to inquiry. In this article, they present these standards and their rationale, and they detail the ways that the standards differ from the quantitative research reporting standards. They describe how the standards can be used by authors in the process of writing qualitative research for submission as well as by reviewers and editors in the process of reviewing research.",
