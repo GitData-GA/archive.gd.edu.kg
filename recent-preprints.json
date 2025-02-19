@@ -1,4 +1,34 @@
 {
+  "20250219013012/v1": {
+    "title": "Time Series of Analysis Annual Temperature Anomalies (1850–2021) for the Northern Hemisphere",
+    "subject": "Data Science (Statistics Theory)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "20250219013012",
+    "keywords": [
+      "Time Series",
+      "Climate",
+      "Data Science"
+    ],
+    "author": [
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009000731622071"
+      },
+      {
+        "firstName": "Kathy",
+        "lastName": "Mo"
+      },
+      {
+        "firstName": "Weilin ",
+        "lastName": "Cheng"
+      }
+    ],
+    "abstract": "Today, climate change is one of the most substantial issues in the world. Therefore, annual temperature anomalies are the problem we are concerned about, since anomalies are how we see how the climate changes. Our data set is about the annual temperature anomalies (1850–2021) for the northern hemisphere [1]. A temperature anomaly means a deviation from a reference value or long-term average. The data set contains two columns which are Year and Temperature Anomalies. Based on our knowledge of time series, we want to predict the trend of Temperature Anomalies in the future. As we know, a sequence captured at successive, equally spaced points in time is referred to as a time series. Since Temperature Anomalies are taken over time, which is Years, it is a time series. \n\nBecause of prior climatic history and its effects on humans, we believe that it is vital to analyze and forecast future anomalies. To better prepare and safeguard the environment, it is crucial to anticipate what these potential future anomalies might be. People can then prepare to mitigate it based on how severe it is. ",
+    "submitterID": "user_2spvYQ9AjrISg3WoP6dprXUp6F6"
+  },
   "20241229182247/v2": {
     "title": "The Causal Impact of Dean’s List Recognition on  Academic Performance: Evidence from a  Regression Discontinuity Design",
     "subject": "Economics (Econometrics)",
@@ -106,55 +136,5 @@
     ],
     "abstract": "This study examines the causal impact of being placed on the Dean&#39;s List, a positive education incentive, on future student performance using a regression discontinuity design. The results suggest that for students with low prior academic performance and who are native English speakers, there is a positive impact of being on the Dean’s List on the probability of getting onto the Dean&#39;s List in the following year. However, being on the Dean&#39;s List does not appear to have a statistically significant effect on subsequent GPA, total credits taken, dropout rates, or the probability of graduating within four years. These findings suggest that a place on the Dean&#39;s List may not be a strong motivator for students to improve their academic performance and achieve better outcomes.",
     "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
-  },
-  "20231224043044/v2": {
-    "title": "Unveiling Color Dynamics and Value of Andy Warhol's \"Shot Marilyns\": A Study on Visual Variations and Perception",
-    "subject": "Computer Science (Computer Vision and Pattern Recognition)",
-    "license": "CC BY-SA",
-    "predecessor": "20231224043044/v1",
-    "successor": null,
-    "submissionDate": "20241102191310",
-    "keywords": [
-      "shot marilyns",
-      "pop art",
-      "andy warhol",
-      "region of interest"
-    ],
-    "author": [
-      {
-        "firstName": "Hengyuan",
-        "lastName": "Liu",
-        "orcid": "0009-0007-3162-2071"
-      },
-      {
-        "firstName": "Li",
-        "lastName": "Yuan",
-        "orcid": "0009-0008-1075-9922"
-      },
-      {
-        "firstName": "Kathy",
-        "lastName": "Mo",
-        "orcid": "0009-0007-8456-5656"
-      },
-      {
-        "firstName": "Xinhui",
-        "lastName": "Luo",
-        "orcid": "0009-0005-9143-9012"
-      },
-      {
-        "firstName": "Weilin",
-        "lastName": "Cheng",
-        "orcid": "0009-0008-1204-4234"
-      },
-      {
-        "firstName": "Erick S.",
-        "lastName": "Arenas V.",
-        "orcid": "0009-0007-3655-8312"
-      }
-    ],
-    "abstract": "This study investigates the visual dynamics and value of Andy Warhol’s &quot;Shot Marilyns&quot; series through the innovative application of statistical techniques, including entropy, K-Means clustering, and K-Nearest Neighbors, alongside traditional analytical methods. This approach provides a comprehensive analysis of color distribution, regional variation, and the overall value of the masterpiece. The results reveal significant inter-painting variations and uncover intricate color dependencies that challenge assumptions of uniformity. Furthermore, the restoration of the damaged region in &quot;Blue Marilyn&quot; highlights the complexity of Warhol&#39;s color choices and contributes to the ongoing discussion about the potential value of the series. These findings offer new insights into Warhol’s aesthetic decisions, deepening our understanding of the role of color perception in contemporary art.",
-    "relatedLink": "https://shotmarilyns.gd.edu.kg/",
-    "comment": "Methods changed.",
-    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
   }
 }
