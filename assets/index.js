@@ -662,7 +662,7 @@ async function search() {
             ...jsonData[key],
             author: jsonData[key].author ?
                 jsonData[key].author.map(author =>
-                    ${author.firstName} ${author.middleName ? author.middleName + ' ' : ''}${author.lastName}
+                    `${author.firstName} ${author.middleName ? author.middleName + ' ' : ''}${author.lastName}`
                 ) :
                 [],
             submissionDate: jsonData[key].submissionDate ?
@@ -672,7 +672,7 @@ async function search() {
 
         const options = {
             keys: ['title', 'id', 'abstract', 'keywords'],
-            threshold: 0.3,
+            threshold: 0.1,
             includeMatches: true,
             findAllMatches: true,
             useExtendedSearch: true
