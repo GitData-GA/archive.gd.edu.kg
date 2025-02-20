@@ -672,7 +672,7 @@ async function search() {
 
         const options = {
             keys: ['title', 'id', 'abstract', 'keywords'],
-            threshold: 0.1,
+            threshold: 0.3,
             includeMatches: true,
             findAllMatches: true,
             useExtendedSearch: true
