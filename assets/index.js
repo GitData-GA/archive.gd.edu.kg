@@ -729,7 +729,7 @@ async function search() {
                     </p>
                     <b><p>${paper.title}</p></b>
                     <p><b>Submission date</b>: ${paper.submissionDate.substring(0, 4)}/${paper.submissionDate.substring(5, 7)}/${paper.submissionDate.substring(8, 10)}</p>
-                    <p><b>Author</b>: ${paper.author}</p> 
+                    <p><b>Author</b>:${paper.author}</p> 
                     <p><b>Abstract</b>: ${truncatedAbstract}</p>
                     <hr>
                 `;
