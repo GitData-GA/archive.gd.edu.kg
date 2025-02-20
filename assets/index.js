@@ -662,8 +662,8 @@ async function search() {
             ...jsonData[key],
             author: jsonData[key].author ?
                 jsonData[key].author.map(author =>
-                    `${author.firstName} ${author.middleName ? author.middleName + ' ' : ''}${author.lastName}`
-                ).join(', ') :
+                    ${author.firstName} ${author.middleName ? author.middleName + ' ' : ''}${author.lastName}
+                ) :
                 [],
             submissionDate: jsonData[key].submissionDate ?
                 `${jsonData[key].submissionDate.slice(0, 4)}-${jsonData[key].submissionDate.slice(4, 6)}-${jsonData[key].submissionDate.slice(6, 8)}T${jsonData[key].submissionDate.slice(8, 10)}:${jsonData[key].submissionDate.slice(10, 12)}:${jsonData[key].submissionDate.slice(12, 14)}Z` :
