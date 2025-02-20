@@ -662,7 +662,7 @@ async function search() {
             ...jsonData[key],
             author: jsonData[key].author ?
                 jsonData[key].author.map(author =>
-                    `${author.firstName} ${author.middleName ? author.middleName + ' ' : ''}${author.lastName}`
+                    ` ${author.firstName} ${author.middleName ? author.middleName + ' ' : ''}${author.lastName}`
                 ) :
                 [],
             submissionDate: jsonData[key].submissionDate ?
