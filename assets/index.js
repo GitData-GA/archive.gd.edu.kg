@@ -653,60 +653,84 @@ async function search() {
         return;
     }
 
+    const options = {
+        keys: ['title', 'id', 'abstract', 'keywords'],
+        threshold: 0.3,
+        includeMatches: true,
+        findAllMatches: true,
+        useExtendedSearch: true
+    };
+
     try {
-        const response = await fetch('https://archive.gd.edu.kg/metadata.json');
-        const jsonData = await response.json();
+        let filteredData = await new Promise((resolve, reject) => {
+            const papers = [];
+            oboe('https://archive.gd.edu.kg/metadata.json')
+                .node('!.*', (paper, path) => {
+                    const paperId = path[0];
 
-        const papersArray = Object.keys(jsonData).map(key => ({
-            id: key,
-            ...jsonData[key],
-            author: jsonData[key].author ?
-                jsonData[key].author.map(author =>
-                    ` ${author.firstName} ${author.middleName ? author.middleName + ' ' : ''}${author.lastName}`
-                ) :
-                [],
-            submissionDate: jsonData[key].submissionDate ?
-                `${jsonData[key].submissionDate.slice(0, 4)}-${jsonData[key].submissionDate.slice(4, 6)}-${jsonData[key].submissionDate.slice(6, 8)}T${jsonData[key].submissionDate.slice(8, 10)}:${jsonData[key].submissionDate.slice(10, 12)}:${jsonData[key].submissionDate.slice(12, 14)}Z` :
-                null
-        }));
+                    const transformedPaper = {
+                        id: paperId,
+                        ...paper,
+                        author: paper.author ? 
+                            paper.author.map(a => 
+                                `${a.firstName} ${a.middleName ? a.middleName + ' ' : ''}${a.lastName}`
+                            ) : [],
+                        submissionDate: paper.submissionDate ? 
+                            `${paper.submissionDate.slice(0, 4)}-${paper.submissionDate.slice(4, 6)}-` +
+                            `${paper.submissionDate.slice(6, 8)}T${paper.submissionDate.slice(8, 10)}:` +
+                            `${paper.submissionDate.slice(10, 12)}:${paper.submissionDate.slice(12, 14)}Z` : 
+                            null
+                    };
 
-        const options = {
-            keys: ['title', 'id', 'abstract', 'keywords'],
-            threshold: 0.1,
-            includeMatches: true,
-            findAllMatches: true,
-            useExtendedSearch: true
-        };
+                    const fuse = new Fuse([transformedPaper], options);
 
-        const fuse = new Fuse(papersArray, options);
-        let filteredData = searchQuery ? fuse.search(searchQuery).map(result => result.item) : papersArray;
+                    if (searchQuery) {
+                        const searchResults = fuse.search(searchQuery);
+                        if (searchResults.length === 0) {
+                            return;
+                        }
+                    }
 
-        if (author !== "undefined" && author !== "") {
-            filteredData = filteredData.filter(paper =>
-                paper.author.some(a => a.toLowerCase().includes(author.toLowerCase()))
-            );
-        }
+                    if (author !== "undefined" && author !== "" && !transformedPaper.author.some(a => a.toLowerCase().includes(author.toLowerCase()))) {
+                        return;
+                    }
 
-        if (subject !== "undefined" && subject !== "") {
-            filteredData = filteredData.filter(paper => paper.subject === subject);
-        }
+                    if (subject !== "undefined" && subject !== "" && transformedPaper.subject !== subject) {
+                        return;
+                    }
 
-        if (startDate !== "undefined" && startDate !== "") {
-            filteredData = filteredData.filter(paper => paper.submissionDate && new Date(paper.submissionDate) >= new Date(startDate));
-        }
+                    if (startDate !== "undefined" && startDate !== "" && transformedPaper.submissionDate) {
+                        const paperDate = new Date(transformedPaper.submissionDate);
+                        if (paperDate < new Date(startDate)) {
+                            return;
+                        }
+                    }
 
-        if (endDate !== "undefined" && endDate !== "") {
-            filteredData = filteredData.filter(paper => paper.submissionDate && new Date(paper.submissionDate) <= new Date(endDate));
-        }
+                    if (endDate !== "undefined" && endDate !== "" && transformedPaper.submissionDate) {
+                        const paperDate = new Date(transformedPaper.submissionDate);
+                        if (paperDate > new Date(endDate)) {
+                            return;
+                        }
+                    }
+
+                    if (versionOption === "latest") {
+                        if (transformedPaper.successor !== null) {
+                            return;
+                        }
+                    }
+
+                    papers.push(transformedPaper);
+                })
+                .done(() => resolve(papers))
+                .fail(reject);
+        });
+
+        console.log(filteredData);
 
         if (sortOption === "desc") {
             filteredData.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
         } else {
             filteredData.sort((a, b) => new Date(a.submissionDate) - new Date(b.submissionDate));
-        }
-
-        if (versionOption === "latest") {
-            filteredData = filteredData.filter(paper => paper.successor === null);
         }
 
         var resultsContainer = document.getElementById('searchResults');
@@ -729,7 +753,7 @@ async function search() {
                     </p>
                     <b><p>${paper.title}</p></b>
                     <p><b>Submission date</b>: ${paper.submissionDate.substring(0, 4)}/${paper.submissionDate.substring(5, 7)}/${paper.submissionDate.substring(8, 10)}</p>
-                    <p><b>Author</b>:${paper.author}</p> 
+                    <p><b>Author</b>: ${paper.author.join(", ")}</p> 
                     <p><b>Abstract</b>: ${truncatedAbstract}</p>
                     <hr>
                 `;
