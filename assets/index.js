@@ -670,16 +670,20 @@ async function search() {
 
                     const transformedPaper = {
                         id: paperId,
-                        ...paper,
-                        author: paper.author ? 
-                            paper.author.map(a => 
-                                `${a.firstName} ${a.middleName ? a.middleName + ' ' : ''}${a.lastName}`
-                            ) : [],
+                        title: paper.title,
+                        subject: paper.subject,
+                        successor: paper.successor,
                         submissionDate: paper.submissionDate ? 
                             `${paper.submissionDate.slice(0, 4)}-${paper.submissionDate.slice(4, 6)}-` +
                             `${paper.submissionDate.slice(6, 8)}T${paper.submissionDate.slice(8, 10)}:` +
                             `${paper.submissionDate.slice(10, 12)}:${paper.submissionDate.slice(12, 14)}Z` : 
-                            null
+                            null,
+                        keywords: paper.keywords,
+                        author: paper.author ? 
+                            paper.author.map(a => 
+                                `${a.firstName} ${a.middleName ? a.middleName + ' ' : ''}${a.lastName}`
+                            ) : [],
+                        abstract: paper.abstract
                     };
 
                     const fuse = new Fuse([transformedPaper], options);
@@ -724,8 +728,6 @@ async function search() {
                 .done(() => resolve(papers))
                 .fail(reject);
         });
-
-        console.log(filteredData);
 
         if (sortOption === "desc") {
             filteredData.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
