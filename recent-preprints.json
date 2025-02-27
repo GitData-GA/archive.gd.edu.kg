@@ -1,26 +1,4 @@
 {
-  "20250227211656/v1": {
-    "title": "This is a test",
-    "subject": "Computer Science (Databases)",
-    "license": "CC BY-NC",
-    "predecessor": null,
-    "successor": null,
-    "submissionDate": "20250227211656",
-    "doi": "10.5281/zenodo.14941469",
-    "keywords": [
-      "key1",
-      "key2",
-      "key3"
-    ],
-    "author": [
-      {
-        "firstName": "test1",
-        "lastName": "test2"
-      }
-    ],
-    "abstract": "This study examines the causal impact of being placed on the Dean&#39;s List, a positive education incentive, on future student performance using a regression discontinuity design. The results suggest that for students with low prior academic performance and who are native English speakers, there is a positive impact of being on the Dean&#39;s List on the probability of getting onto the Dean&#39;s List in the following year. However, being on the Dean&#39;s List does not appear to have a statistically significant effect on subsequent GPA, total credits taken, dropout rates, or the probability of graduating within four years. These findings suggest that a place on the Dean&#39;s List may not be a strong motivator for students to improve their academic performance and achieve better outcomes.",
-    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
-  },
   "20250219013012/v1": {
     "title": "Time Series of Analysis Annual Temperature Anomalies (1850–2021) for the Northern Hemisphere",
     "subject": "Data Science (Applications)",
@@ -136,5 +114,55 @@
     ],
     "abstract": "This study examines the causal impact of being placed on the Dean&#39;s List, a positive education incentive, on future student performance using a regression discontinuity design. The results suggest that for students with low prior academic performance and who are native English speakers, there is a positive impact of being on the Dean&#39;s List on the probability of getting onto the Dean&#39;s List in the following year. However, being on the Dean&#39;s List does not appear to have a statistically significant effect on subsequent GPA, total credits taken, dropout rates, or the probability of graduating within four years. These findings suggest that a place on the Dean&#39;s List may not be a strong motivator for students to improve their academic performance and achieve better outcomes.",
     "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
+  },
+  "20231224043044/v2": {
+    "title": "Unveiling Color Dynamics and Value of Andy Warhol's \"Shot Marilyns\": A Study on Visual Variations and Perception",
+    "subject": "Computer Science (Computer Vision and Pattern Recognition)",
+    "license": "CC BY-SA",
+    "predecessor": "20231224043044/v1",
+    "successor": null,
+    "submissionDate": "20241102191310",
+    "keywords": [
+      "shot marilyns",
+      "pop art",
+      "andy warhol",
+      "region of interest"
+    ],
+    "author": [
+      {
+        "firstName": "Hengyuan",
+        "lastName": "Liu",
+        "orcid": "0009-0007-3162-2071"
+      },
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      },
+      {
+        "firstName": "Kathy",
+        "lastName": "Mo",
+        "orcid": "0009-0007-8456-5656"
+      },
+      {
+        "firstName": "Xinhui",
+        "lastName": "Luo",
+        "orcid": "0009-0005-9143-9012"
+      },
+      {
+        "firstName": "Weilin",
+        "lastName": "Cheng",
+        "orcid": "0009-0008-1204-4234"
+      },
+      {
+        "firstName": "Erick S.",
+        "lastName": "Arenas V.",
+        "orcid": "0009-0007-3655-8312"
+      }
+    ],
+    "abstract": "This study investigates the visual dynamics and value of Andy Warhol’s &quot;Shot Marilyns&quot; series through the innovative application of statistical techniques, including entropy, K-Means clustering, and K-Nearest Neighbors, alongside traditional analytical methods. This approach provides a comprehensive analysis of color distribution, regional variation, and the overall value of the masterpiece. The results reveal significant inter-painting variations and uncover intricate color dependencies that challenge assumptions of uniformity. Furthermore, the restoration of the damaged region in &quot;Blue Marilyn&quot; highlights the complexity of Warhol&#39;s color choices and contributes to the ongoing discussion about the potential value of the series. These findings offer new insights into Warhol’s aesthetic decisions, deepening our understanding of the role of color perception in contemporary art.",
+    "relatedLink": "https://shotmarilyns.gd.edu.kg/",
+    "comment": "Methods changed.",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
   }
 }
