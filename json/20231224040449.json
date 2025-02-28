@@ -6,6 +6,7 @@
     "predecessor": null,
     "successor": "20231224040449/v2",
     "submissionDate": "20231224040449",
+    "doi": "10.5281/zenodo.14925677",
     "keywords": [
       "blood pressure",
       "multinomial regression",
@@ -37,6 +38,7 @@
     "predecessor": "20231224040449/v1",
     "successor": null,
     "submissionDate": "20240104031803",
+    "doi": "10.5281/zenodo.14925793",
     "keywords": [
       "blood pressure",
       "multinomial regression",
