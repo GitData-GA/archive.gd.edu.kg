@@ -93,7 +93,6 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>' > oai.xml
           echo '<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">' >> oai.xml
 
-          # Add Identify section
           echo '  <Identify>' >> oai.xml
           echo '    <repositoryName>GitData Archive</repositoryName>' >> oai.xml
           echo '    <baseURL>https://archive.gd.edu.kg/oai.xml</baseURL>' >> oai.xml
@@ -103,7 +102,6 @@ jobs:
           echo '    <deletedRecord>no</deletedRecord>' >> oai.xml
           echo '  </Identify>' >> oai.xml
 
-          # Add ListRecords section
           echo '  <ListRecords>' >> oai.xml
 
           jq -c 'to_entries[]' metadata.json | while read entry; do
@@ -125,7 +123,6 @@ jobs:
             echo "        <doi>$doi</doi>" >> oai.xml
             echo "        <abstract><![CDATA[$abstract]]></abstract>" >> oai.xml
 
-            # Authors
             echo "        <authors>" >> oai.xml
             echo "$entry" | jq -c '.value.author[]' | while read author; do
               firstName=$(echo "$author" | jq -r '.firstName')
@@ -148,11 +145,11 @@ jobs:
 
           echo '  </ListRecords>' >> oai.xml
           echo '</OAI-PMH>' >> oai.xml
-
+          
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add metadata.json sitemap.xml recent-preprints.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update metadata.json, sitemap.xml, and recent-preprints.json"
+          git add metadata.json sitemap.xml recent-preprints.json oai.xml
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update metadata.json, sitemap.xml, recent-preprints.json, oai.xml"
           git push
