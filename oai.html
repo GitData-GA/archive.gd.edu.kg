@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OAI-PMH Endpoint</title>
+</head>
+<body>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const verb = urlParams.get('verb');
+    
+    // Load metadata
+    fetch('metadata.json')
+        .then(response => response.json())
+        .then(metadata => {
+            let xmlResponse;
+            
+            // Handle OAI-PMH verbs
+            switch(verb) {
+                case 'Identify':
+                    xmlResponse = handleIdentify();
+                    break;
+                case 'ListMetadataFormats':
+                    xmlResponse = handleListMetadataFormats();
+                    break;
+                case 'ListIdentifiers':
+                    xmlResponse = handleListIdentifiers(metadata, urlParams);
+                    break;
+                case 'ListRecords':
+                    xmlResponse = handleListRecords(metadata, urlParams);
+                    break;
+                case 'GetRecord':
+                    xmlResponse = handleGetRecord(metadata, urlParams);
+                    break;
+                default:
+                    xmlResponse = generateError('badVerb', 'Illegal OAI verb');
+            }
+
+            // Return XML response
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlResponse, "text/xml");
+            console.log(xmlDoc); // For demonstration, would return as actual response
+            document.body.innerHTML = `<pre>${new XMLSerializer().serializeToString(xmlDoc)}</pre>`;
+        });
+});
+
+function generateOAIHeader() {
+    return `
+    <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
+             http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+        <responseDate>${new Date().toISOString()}</responseDate>
+        <request verb="${new URLSearchParams(window.location.search).get('verb')}">https://archive.gd.edu.kg/oai</request>`;
+}
+
+function handleIdentify() {
+    return `${generateOAIHeader()}
+        <Identify>
+            <repositoryName>GD Archive</repositoryName>
+            <baseURL>https://archive.gd.edu.kg/oai</baseURL>
+            <protocolVersion>2.0</protocolVersion>
+            <adminEmail>admin@archive.gd.edu.kg</adminEmail>
+            <earliestDatestamp>2023-01-01T00:00:00Z</earliestDatestamp>
+            <deletedRecord>no</deletedRecord>
+            <granularity>YYYY-MM-DDThh:mm:ssZ</granularity>
+            <description>
+                <oai-identifier xmlns="http://www.openarchives.org/OAI/2.0/oai-identifier"
+                    xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai-identifier 
+                    http://www.openarchives.org/OAI/2.0/oai-identifier.xsd">
+                    <scheme>oai</scheme>
+                    <repositoryIdentifier>archive.gd.edu.kg</repositoryIdentifier>
+                    <delimiter>:</delimiter>
+                    <sampleIdentifier>oai:archive.gd.edu.kg:20231224040449/v1</sampleIdentifier>
+                </oai-identifier>
+            </description>
+        </Identify>
+    </OAI-PMH>`;
+}
+
+function handleListMetadataFormats() {
+    return `${generateOAIHeader()}
+        <ListMetadataFormats>
+            <metadataFormat>
+                <metadataPrefix>oai_dc</metadataPrefix>
+                <schema>http://www.openarchives.org/OAI/2.0/oai_dc.xsd</schema>
+                <metadataNamespace>http://www.openarchives.org/OAI/2.0/oai_dc/</metadataNamespace>
+            </metadataFormat>
+        </ListMetadataFormats>
+    </OAI-PMH>`;
+}
+
+function generateRecord(entry, id) {
+    return `
+    <record>
+        <header>
+            <identifier>oai:archive.gd.edu.kg:${id}</identifier>
+            <datestamp>${new Date(entry.submissionDate).toISOString()}</datestamp>
+        </header>
+        <metadata>
+            <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+                      xmlns:dc="http://purl.org/dc/elements/1.1/">
+                <dc:title>${entry.title}</dc:title>
+                ${entry.author.map(a => `<dc:creator>${a.firstName} ${a.lastName}${a.orcid ? ` (ORCID: ${a.orcid})` : ''}</dc:creator>`).join('')}
+                <dc:subject>${entry.subject}</dc:subject>
+                ${entry.keywords.map(k => `<dc:subject>${k}</dc:subject>`).join('')}
+                <dc:description>${entry.abstract}</dc:description>
+                <dc:date>${new Date(entry.submissionDate).toISOString()}</dc:date>
+                <dc:identifier>${entry.doi}</dc:identifier>
+                <dc:rights>${entry.license}</dc:rights>
+            </oai_dc:dc>
+        </metadata>
+    </record>`;
+}
+
+function handleListRecords(metadata, params) {
+    const records = Object.entries(metadata)
+        .map(([id, entry]) => generateRecord(entry, id))
+        .join('');
+
+    return `${generateOAIHeader()}
+        <ListRecords>
+            ${records}
+        </ListRecords>
+    </OAI-PMH>`;
+}
+
+function generateError(code, message) {
+    return `${generateOAIHeader()}
+        <error code="${code}">${message}</error>
+    </OAI-PMH>`;
+}
+</script>
+</body>
+</html>
