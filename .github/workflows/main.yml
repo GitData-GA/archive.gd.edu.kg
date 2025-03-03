@@ -21,42 +21,6 @@ jobs:
         run: |
           jq '[to_entries[]] | sort_by(.value.submissionDate) | reverse | .[0:5] | from_entries' metadata.json > recent-preprints.json
 
-      - name: Generate OAI-PMH XML
-        run: |
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > oai.xml
-          echo '<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">' >> oai.xml
-          echo "  <responseDate>$(date -u +"%Y-%m-%dT%H:%M:%SZ")</responseDate>" >> oai.xml
-          echo '  <request verb="ListRecords" metadataPrefix="oai_dc">https://archive.gd.edu.kg/oai.xml</request>' >> oai.xml
-          echo '  <ListRecords>' >> oai.xml
-      
-          jq -r '
-            to_entries | map(
-              .key as $id
-              | .value as $entry
-              | "<record>" +
-                "<header>" +
-                  "<identifier>oai:archive.gd.edu.kg:\($id)</identifier>" +
-                  "<datestamp>\($entry.submissionDate | strptime("%Y%m%d%H%M%S") | strftime("%Y-%m-%dT%H:%M:%SZ"))</datestamp>" +
-                "</header>" +
-                "<metadata>" +
-                  "<oai_dc:dc xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">" +
-                    "<dc:title>\($entry.title)</dc:title>" +
-                    ($entry.author | map("<dc:creator>\(.firstName) \(.lastName)" + (if .orcid then " (ORCID: \(.orcid))" else "" end) + "</dc:creator>") | join("")) +
-                    "<dc:description>\($entry.abstract)</dc:description>" +
-                    "<dc:date>\($entry.submissionDate | strptime("%Y%m%d%H%M%S") | strftime("%Y-%m-%d"))</dc:date>" +
-                    "<dc:subject>\($entry.subject)</dc:subject>" +
-                    ($entry.keywords | map("<dc:subject>\(.)</dc:subject>") | join("")) +
-                    "<dc:rights>\($entry.license)</dc:rights>" +
-                    "<dc:identifier xsi:type=\"doi\">\($entry.doi)</dc:identifier>" +
-                  "</oai_dc:dc>" +
-                "</metadata>" +
-                "</record>"
-            ) | .[]
-          ' metadata.json >> oai.xml
-      
-          echo '  </ListRecords>' >> oai.xml
-          echo '</OAI-PMH>' >> oai.xml
-
       - name: Generate Sitemap
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
@@ -128,6 +92,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add metadata.json sitemap.xml recent-preprints.json oai.xml
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update metadata.json, sitemap.xml, recent-preprints.json, and oai.xml"
+          git add metadata.json sitemap.xml recent-preprints.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update metadata.json, sitemap.xml, recent-preprints.json"
           git push
