@@ -88,6 +88,67 @@ jobs:
 
           echo '</urlset>' >> sitemap.xml
 
+            - name: Generate OAI-PMH XML
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > oai.xml
+          echo '<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">' >> oai.xml
+
+          # Add Identify section
+          echo '  <Identify>' >> oai.xml
+          echo '    <repositoryName>GitData Archive</repositoryName>' >> oai.xml
+          echo '    <baseURL>https://archive.gd.edu.kg/oai.xml</baseURL>' >> oai.xml
+          echo '    <protocolVersion>2.0</protocolVersion>' >> oai.xml
+          echo '    <adminEmail>admin@gd.edu.kg</adminEmail>' >> oai.xml
+          echo '    <earliestDatestamp>2023-12-24</earliestDatestamp>' >> oai.xml
+          echo '    <deletedRecord>no</deletedRecord>' >> oai.xml
+          echo '  </Identify>' >> oai.xml
+
+          # Add ListRecords section
+          echo '  <ListRecords>' >> oai.xml
+
+          jq -c 'to_entries[]' metadata.json | while read entry; do
+            identifier=$(echo "$entry" | jq -r '.key')
+            title=$(echo "$entry" | jq -r '.value.title')
+            subject=$(echo "$entry" | jq -r '.value.subject')
+            license=$(echo "$entry" | jq -r '.value.license')
+            submissionDate=$(echo "$entry" | jq -r '.value.submissionDate')
+            doi=$(echo "$entry" | jq -r '.value.doi')
+            abstract=$(echo "$entry" | jq -r '.value.abstract')
+
+            echo '    <record>' >> oai.xml
+            echo '      <metadata>' >> oai.xml
+            echo "        <identifier>$identifier</identifier>" >> oai.xml
+            echo "        <title>$title</title>" >> oai.xml
+            echo "        <subject>$subject</subject>" >> oai.xml
+            echo "        <license>$license</license>" >> oai.xml
+            echo "        <submissionDate>$submissionDate</submissionDate>" >> oai.xml
+            echo "        <doi>$doi</doi>" >> oai.xml
+            echo "        <abstract><![CDATA[$abstract]]></abstract>" >> oai.xml
+
+            # Authors
+            echo "        <authors>" >> oai.xml
+            echo "$entry" | jq -c '.value.author[]' | while read author; do
+              firstName=$(echo "$author" | jq -r '.firstName')
+              lastName=$(echo "$author" | jq -r '.lastName')
+              orcid=$(echo "$author" | jq -r '.orcid // empty')  # ORCID is optional
+
+              echo "          <author>" >> oai.xml
+              echo "            <firstName>$firstName</firstName>" >> oai.xml
+              echo "            <lastName>$lastName</lastName>" >> oai.xml
+              if [ -n "$orcid" ]; then
+                echo "            <orcid>$orcid</orcid>" >> oai.xml
+              fi
+              echo "          </author>" >> oai.xml
+            done
+            echo "        </authors>" >> oai.xml
+
+            echo '      </metadata>' >> oai.xml
+            echo '    </record>' >> oai.xml
+          done
+
+          echo '  </ListRecords>' >> oai.xml
+          echo '</OAI-PMH>' >> oai.xml
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
