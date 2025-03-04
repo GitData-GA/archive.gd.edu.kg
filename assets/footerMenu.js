@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <a href="https://archive.gd.edu.kg/sitemap.xml">Sitemap</a><br>
                   <a href="https://archive.gd.edu.kg/check-for-update">Check for update</a><br>
                   <a href="https://archive.gd.edu.kg/metadata.json">Feed</a><br>
+                  <a href="https://oai.archive.gd.edu.kg/">OAI-PMH</a>
               </div>
               <div class="col" style="text-align: left; font-size:12px;">
                   <p>Policy</p>
