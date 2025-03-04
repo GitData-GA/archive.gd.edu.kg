@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <a href="https://www.gd.edu.kg/cookie-policy/" target="_blank">Cookie Policy</a><br>
               </div>
               <div class="col" style="text-align: left; font-size:12px;">
+                  <p>Connection</p>
                   <img src="https://archive.gd.edu.kg/assets/openaire.svg" height="30px" alt="openaire"></img>
               </div>
           </div>
