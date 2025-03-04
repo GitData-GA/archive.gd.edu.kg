@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
                   <a href="https://www.gd.edu.kg/cookie-policy/" target="_blank">Cookie Policy</a><br>
               </div>
               <div class="col" style="text-align: left; font-size:12px;">
-                  <p>Connection</p>
-                  <img src="https://archive.gd.edu.kg/assets/openaire.svg" height="30px" alt="openaire"></img>
+                  <p>Indexing</p>
+                  <a href="https://www.openaire.eu/" target="_blank">OpenAIRE</a>
+                  <a href="https://v2.sherpa.ac.uk/opendoar/" target="_blank">OpenDOAR</a>
+                  <a href="https://zenodo.org/" target="_blank" >Zenodo</a>
               </div>
           </div>
         `;
