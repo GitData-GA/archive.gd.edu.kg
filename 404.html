@@ -21,7 +21,7 @@
                 // Case 1: Redirect /YYYYMMDDHHMMSS/ and /YYYYMMDDHHMMSS/vX/ to /abs/...
                 let matchAbs = path.match(/^\/(\d{14})(\/v\d+)?\/?$/);
                 if (matchAbs) {
-                    let newUrl = "/abs/" + matchAbs[1] + (matchAbs[2] || "") + "/";
+                    let newUrl = "/abs/" + matchAbs[1] + (matchAbs[2] || "");
                     window.location.replace(newUrl);
                     return;
                 }
