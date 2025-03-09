@@ -76,7 +76,7 @@ jobs:
               priority="0.8"
             else
               url="https://archive.gd.edu.kg/pdf/$yyyymmddhhmmss/$base.pdf"
-              priority="0.64"
+              priority="0.8"
             fi
 
             echo '<url>' >> sitemap.xml
