@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <p>Indexing</p>
                   <a href="https://explore.openaire.eu/search/dataprovider?datasourceId=opendoar____::39799c18791e8d7eb29704fc5bc04ac8" target="_blank">OpenAIRE</a><br>
                   <a href="https://v2.sherpa.ac.uk/id/repository/11064" target="_blank">OpenDOAR</a><br>
+                  <a href="https://roar.eprints.org/24306/" target="_blank">ROAR</a>
                   <a href="https://zenodo.org/communities/gitdata/" target="_blank">Zenodo</a>
               </div>
           </div>
