@@ -1,4 +1,40 @@
 {
+  "20250525121523/v1": {
+    "title": "GarmentIQ: Automated Garment Measurement for Fashion Retail",
+    "subject": "Computer Science (Computer Vision and Pattern Recognition)",
+    "license": "CC BY",
+    "predecessor": null,
+    "successor": null,
+    "submissionDate": "20250525121523",
+    "doi": "10.5281/zenodo.15511508",
+    "keywords": [
+      "Automated Garment Measurement",
+      "Fashion Computer Vision",
+      "Vision Transformer",
+      "Garment Keypoint Detection",
+      "Image Segmentation for Fashion"
+    ],
+    "author": [
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      },
+      {
+        "firstName": "Xinrui",
+        "lastName": "Zhai",
+        "orcid": "0009-0003-7588-2634"
+      },
+      {
+        "firstName": "Fangzhou",
+        "lastName": "Ma",
+        "orcid": "0009-0002-2956-7134"
+      }
+    ],
+    "abstract": "Online fashion retail has revolutionized shopping but faces persistent sizing issues, driving return rates above 25\\%, costing fashion retailers billions of dollar annually, and increasing textile waste and carbon emissions. We present GarmentIQ, an end-to-end computer vision system combining garment classification, high-resolution segmentation, and landmark detection for precise, template-free measurements across nine categories. An interactive web interface lets users define custom measurement points and export structured JSON and PDF instructions. We used a 23,266-image dataset from Nordstrom and Myntra, and our tinyViT classifier achieves 95.76\\% accuracy, demonstrating superior generalization after fine-tuning on Zara data. BiRefNet produces high-quality segmentation, and HRNet-based landmark extraction attains high precision, with customized landmark derivation. GarmentIQ&#39;s modular, user-friendly design streamlines workflows, reduces returns, and promotes sustainability, laying the groundwork for future automated fashion analysis.",
+    "relatedLink": "https://garmentiq.ly.gd.edu.kg/",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  },
   "20250219013012/v1": {
     "title": "Time Series of Analysis Annual Temperature Anomalies (1850–2021) for the Northern Hemisphere",
     "subject": "Data Science (Applications)",
@@ -119,29 +155,6 @@
       }
     ],
     "abstract": "This study investigates how the sequence of training environments affects performance in simple driving tasks for an autonomous driving agent. By training agents solely through interaction with maps of varying difficulty, we demonstrate that transfer learning enhances performance within single-environment driving scenarios. However, we find that agents struggle to master advanced driving capabilities and fail to generalize well to new environments, regardless of the sequence of training data. We conclude by looking at areas to build on this work such by combining imitation learning with curriculum learning and developing curriculum-specific MDP.",
-    "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
-  },
-  "20241229182247/v1": {
-    "title": "Student Future Academic Performance after Being Placed on Dean’s List",
-    "subject": "Economics (Econometrics)",
-    "license": "CC BY",
-    "predecessor": null,
-    "successor": "20241229182247/v2",
-    "submissionDate": "20241229182247",
-    "doi": "10.5281/zenodo.14941308",
-    "keywords": [
-      "Dean’s List",
-      "Future Academic Performance",
-      "Regression discontinuity design",
-      "Econometrics"
-    ],
-    "author": [
-      {
-        "firstName": "Luc",
-        "lastName": "Chen"
-      }
-    ],
-    "abstract": "This study examines the causal impact of being placed on the Dean&#39;s List, a positive education incentive, on future student performance using a regression discontinuity design. The results suggest that for students with low prior academic performance and who are native English speakers, there is a positive impact of being on the Dean&#39;s List on the probability of getting onto the Dean&#39;s List in the following year. However, being on the Dean&#39;s List does not appear to have a statistically significant effect on subsequent GPA, total credits taken, dropout rates, or the probability of graduating within four years. These findings suggest that a place on the Dean&#39;s List may not be a strong motivator for students to improve their academic performance and achieve better outcomes.",
     "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
   }
 }
