@@ -1,10 +1,47 @@
 {
+  "20250525121523/v2": {
+    "title": "GarmentIQ: Automated Garment Measurement for Fashion Retail",
+    "subject": "Computer Science (Computer Vision and Pattern Recognition)",
+    "license": "CC BY",
+    "predecessor": "20250525121523/v1",
+    "successor": null,
+    "submissionDate": "20250613033711",
+    "doi": "10.5281/zenodo.15653886",
+    "keywords": [
+      "Automated Garment Measurement",
+      "Fashion Computer Vision",
+      "Vision Transformer",
+      "Garment Keypoint Detection",
+      "Image Segmentation for Fashion"
+    ],
+    "author": [
+      {
+        "firstName": "Li",
+        "lastName": "Yuan",
+        "orcid": "0009-0008-1075-9922"
+      },
+      {
+        "firstName": "Xinrui",
+        "lastName": "Zhai",
+        "orcid": "0009-0003-7588-2634"
+      },
+      {
+        "firstName": "Fangzhou",
+        "lastName": "Ma",
+        "orcid": "0009-0002-2956-7134"
+      }
+    ],
+    "abstract": "Online fashion retail has revolutionized shopping but faces persistent sizing issues, driving return rates above 25%, costing fashion retailers billions of dollar annually, and increasing textile waste and carbon emissions. We present GarmentIQ, an end-to-end computer vision system combining garment classification, high-resolution segmentation, and landmark detection for precise, template-free measurements across nine categories. An interactive web interface lets users define custom measurement points and export structured JSON and PDF instructions. We used a 23,266-image dataset from Nordstrom and Myntra, and our tinyViT classifier achieves 95.76% accuracy, demonstrating superior generalization after fine-tuning on Zara data. BiRefNet produces high-quality segmentation, and HRNet-based landmark extraction attains high precision, with customized landmark derivation. GarmentIQ&#39;s modular, user-friendly design streamlines workflows, reduces returns, and promotes sustainability, laying the groundwork for future automated fashion analysis.",
+    "relatedLink": "https://garmentiq.ly.gd.edu.kg/",
+    "comment": "Python package list correction.",
+    "submitterID": "user_2so35E0TC4NHXAlQhQuJPswIJSD"
+  },
   "20250525121523/v1": {
     "title": "GarmentIQ: Automated Garment Measurement for Fashion Retail",
     "subject": "Computer Science (Computer Vision and Pattern Recognition)",
     "license": "CC BY",
     "predecessor": null,
-    "successor": null,
+    "successor": "20250525121523/v2",
     "submissionDate": "20250525121523",
     "doi": "10.5281/zenodo.15511508",
     "keywords": [
@@ -123,38 +160,6 @@
       }
     ],
     "abstract": "Cross-Lingual Information Retrieval (CIR) remains challenging due to limited annotated data and linguistic diversity, especially for low-resource languages. While dense retrieval models have significantly advanced retrieval performance, their reliance on large-scale training datasets hampers their effectiveness in multilingual settings. In this work, we propose two complementary strategies to improve data efficiency and robustness in CIR model fine- tuning. First, we introduce a paraphrase-based query augmentation pipeline leveraging large language models (LLMs) to enrich scarce training data, thereby promoting more robust and language-agnostic representations. Second, we present a weighted InfoNCE loss that emphasizes underrepresented languages, ensuring balanced optimization across heterogeneous linguistic inputs. Experiments on cross-lingual benchmark datasets demonstrate that our combined approaches yield substantial gains in retrieval quality, outperforming standard training protocols on small and imbalanced datasets. These results underscore the potential of targeted data augmentation and reweighted objectives to build more inclusive and effective CIR systems, even under resource constraints.",
-    "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
-  },
-  "20241230073542/v1": {
-    "title": "Curriculum Learning For Autonomous Vehicles",
-    "subject": "Data Science (Machine Learning)",
-    "license": "CC BY",
-    "predecessor": null,
-    "successor": null,
-    "submissionDate": "20241230073542",
-    "doi": "10.5281/zenodo.14941845",
-    "keywords": [
-      "Reinforcement learning (RL)",
-      "Curriculum Learning",
-      "Autonomous Vehicles",
-      "MDP",
-      "Reward Function"
-    ],
-    "author": [
-      {
-        "firstName": "Luc",
-        "lastName": "Chen"
-      },
-      {
-        "firstName": "Michelle",
-        "lastName": "Chang"
-      },
-      {
-        "firstName": "Theo",
-        "lastName": "Lebryk"
-      }
-    ],
-    "abstract": "This study investigates how the sequence of training environments affects performance in simple driving tasks for an autonomous driving agent. By training agents solely through interaction with maps of varying difficulty, we demonstrate that transfer learning enhances performance within single-environment driving scenarios. However, we find that agents struggle to master advanced driving capabilities and fail to generalize well to new environments, regardless of the sequence of training data. We conclude by looking at areas to build on this work such by combining imitation learning with curriculum learning and developing curriculum-specific MDP.",
     "submitterID": "user_2t0ErseSoa6F6ihrk6Hrvx7GI2z"
   }
 }
