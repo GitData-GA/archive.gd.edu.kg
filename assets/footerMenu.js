@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <a href="https://explore.openaire.eu/search/dataprovider?datasourceId=opendoar____::39799c18791e8d7eb29704fc5bc04ac8" target="_blank">OpenAIRE</a><br>
                   <a href="https://opendoar.ac.uk/repository/11064" target="_blank">OpenDOAR</a><br>
                   <a href="https://roar.eprints.org/24306/" target="_blank">ROAR</a><br>
+                  <a href="https://core.ac.uk/data-providers/23769/" target="_blank">CORE</a>
                   <a href="https://zenodo.org/communities/gitdata/" target="_blank">Zenodo</a>
               </div>
           </div>
